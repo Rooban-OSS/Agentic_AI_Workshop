@@ -13,5 +13,6 @@ Created data : 12.06.2025
 Updated date : 12.06.2025
 
 Task name : Interview Panel Optimizer
+Update : Add readme file
 Created date : 16.06.2025
 Updated date : 16.06.2025

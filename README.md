@@ -16,3 +16,15 @@ Task name : Interview Panel Optimizer
 Update : Add readme file
 Created date : 16.06.2025
 Updated date : 16.06.2025
+
+Task name : ReAct pattern 
+Created date : 17.06.2025
+Updated date : 17.06.2025
+
+Task name : Study assistant 
+Created date : 17.06.2025
+Updated date : 17.06.2025
+
+Task naem : Travel assistant 
+Crated date : 17.06.2025
+Updated date : 17.06.2025

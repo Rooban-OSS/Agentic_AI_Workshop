@@ -26,5 +26,9 @@ Created date : 17.06.2025
 Updated date : 17.06.2025
 
 Task naem : Travel assistant 
-Crated date : 17.06.2025
+Created date : 17.06.2025
 Updated date : 17.06.2025
+
+Task name : LangGraph Math Agent
+Created date : 24.07.25
+Update date : 24.07.25

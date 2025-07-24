@@ -1,0 +1,148 @@
+# LangGraph Math Agent
+
+## Overview
+The LangGraph Math Agent is a Streamlit web application that processes mathematical queries using a combination of predefined arithmetic functions and the Groq API for advanced mathematical reasoning. It handles simple arithmetic operations (addition, subtraction, multiplication, division) with custom functions and uses the Groq LLM (`llama-3.3-70b-versatile`) for other math-related queries, such as theorems, equations, and algorithmic descriptions. Non-mathematical queries are rejected, and responses are restricted to mathematical content without code or programming examples.
+
+The application features a modern, user-friendly interface with styled inputs, a clear button, and a formatted response display. It is built using LangGraph for state management and Streamlit for the frontend.
+
+## Features
+- **Simple Arithmetic**: Handles queries like "5 plus 3" or "3.5 times 2" using predefined functions.
+- **Advanced Math Queries**: Processes queries like "What is the Pythagorean theorem?" or "Solve x^2 + 2x - 3 = 0" using the Groq LLM.
+- **Input Validation**: Supports decimal numbers and handles errors (e.g., division by zero, invalid numerical inputs).
+- **Restricted Responses**: Non-mathematical queries return "Sorry, I only handle mathematical queries."
+- **Modern UI**: Includes custom styling, a clear inputs button, and a responsive layout for desktop and mobile.
+- **State Management**: Uses LangGraph to maintain conversation state with a custom reducer for messages.
+
+## Prerequisites
+- **Python**: Version 3.8 or higher.
+- **Groq API Key**: Obtain from [https://console.groq.com/](https://console.groq.com/).
+- **Dependencies**:
+  - `streamlit`
+  - `langgraph`
+  - `langchain-groq`
+
+## Installation
+1. **Clone the Repository** (if applicable):
+   ```bash
+   git clone <repository-url>
+   cd langgraph-math-agent
+
+
+Install Dependencies:pip install streamlit langgraph langchain-groq
+
+
+Save the Code:
+Save the main script as main.py in your project directory (e.g., D:\New folder\mathematics\).
+
+
+
+Usage
+
+Run the Application:streamlit run main.py
+
+
+Access the Web Interface:
+Open your browser to http://localhost:8501.
+
+
+Enter Groq API Key:
+Input a valid Groq API key in the provided text field.
+
+
+Submit Mathematical Queries:
+Enter queries like:
+Simple arithmetic: "5 plus 3" → Returns "8"
+Theorems: "What is the Pythagorean theorem?" → Returns "a² + b² = c²"
+Equations: "Solve x^2 + 2x - 3 = 0" → Returns "x = 1 or x = -3"
+Non-math: "What is AI?" → Returns "Sorry, I only handle mathematical queries."
+
+
+Click "Submit Query" to process the query.
+
+
+Clear Inputs:
+Click "Clear Inputs" to reset the API key and query fields.
+
+
+
+Project Structure
+
+main.py: The main Streamlit application with LangGraph logic, mathematical functions, and UI.
+Dependencies:
+LangGraph for state graph management.
+LangChain-Groq for LLM integration with the llama-3.3-70b-versatile model.
+Streamlit for the web interface.
+
+
+
+Code Explanation
+
+Mathematical Functions: Custom functions (plus, subtract, multiply, divide) handle simple arithmetic with error handling for division by zero.
+LangGraph Setup:
+A GraphState TypedDict manages the question, messages, and response.
+A single chatbot node processes queries using regex for arithmetic and the LLM for other math queries.
+A reducer (append_messages) merges message lists for state updates.
+
+
+Prompt: Instructs the LLM to respond only to mathematical queries with formulas, numerical results, or algorithmic descriptions, avoiding code.
+UI: Features a styled interface with a navy blue theme, responsive layout, and clear error messaging.
+
+Example Queries and Outputs
+
+
+
+Query
+Output
+
+
+
+5 plus 3
+8
+
+
+3.5 times 2
+7.0
+
+
+10 divided by 0
+Error: Division by zero is not allowed
+
+
+What is the Pythagorean theorem?
+a² + b² = c²
+
+
+Solve 2x + 4 = 10
+x = 3
+
+
+What is AI?
+Sorry, I only handle mathematical queries.
+
+
+Troubleshooting
+
+Invalid API Key: Ensure your Groq API key is valid. Generate a new key at https://console.groq.com/ if needed.
+Model Issues: The llama-3.3-70b-versatile model is used. Check Groq documentation for model updates.
+Dependency Errors: Verify all required libraries are installed and up to date.
+Invalid Inputs: Non-numeric inputs in arithmetic queries return "Invalid numerical input."
+
+Limitations
+
+The regex for simple arithmetic supports integers and decimals but not complex expressions (e.g., "2 + 3 * 4"). Extend the regex or add parsing logic for advanced arithmetic.
+The LLM may occasionally misinterpret queries as non-mathematical. Refine the prompt if needed.
+No query history is stored; add session state storage for multi-turn conversations if desired.
+
+Contributing
+Contributions are welcome! To contribute:
+
+Fork the repository.
+Create a feature branch (git checkout -b feature/new-feature).
+Commit changes (git commit -m 'Add new feature').
+Push to the branch (git push origin feature/new-feature).
+Open a pull request.
+
+License
+This project is licensed under the MIT License.
+Contact
+For issues or suggestions, open an issue on the repository or contact the maintainer.```

@@ -1,0 +1,105 @@
+Multi-Agent Data Analysis System
+Overview
+This is a Streamlit-based web application that implements a multi-agent data analysis workflow using Groq's API. The system employs four specialized AI agents to perform comprehensive data analysis:
+
+Data Preparation Agent: Cleans and preprocesses raw data
+EDA Agent: Performs exploratory data analysis
+Critic Agent: Reviews analysis outputs and provides feedback
+Executor Agent: Validates results and provides final recommendations
+
+Features
+
+Interactive web interface built with Streamlit
+Support for multiple data input methods:
+Sample data
+CSV file upload
+Custom JSON data input
+
+
+Data visualization using Plotly (line charts, bar charts, and pie charts)
+Customizable model selection (LLaMA3-8b, LLaMA3-70b, Mixtral-8x7b)
+Downloadable analysis results in JSON format
+Persistent session state for viewing previous analysis results
+Responsive design with custom CSS styling
+
+Requirements
+
+Python 3.8+
+Streamlit
+Requests
+Pandas
+Plotly
+Groq API key (obtain from https://console.groq.com/)
+
+Installation
+
+Clone this repository:
+
+git clone <repository-url>
+cd <repository-directory>
+
+
+Install dependencies:
+
+pip install -r requirements.txt
+
+
+Create a requirements.txt file with:
+
+streamlit==1.25.0
+requests==2.31.0
+pandas==2.0.3
+plotly==5.15.0
+
+Usage
+
+Run the application:
+
+streamlit run app.py
+
+
+Open your web browser and navigate to http://localhost:8501
+
+In the sidebar:
+
+Enter your Groq API key
+Select a Groq model
+Choose a data source (sample data, CSV upload, or custom JSON)
+
+
+Click "Start Analysis" to run the multi-agent workflow
+
+
+Configuration
+
+The application uses a wide layout with an expanded sidebar
+Custom CSS styles for enhanced visual presentation
+API endpoint: https://api.groq.com/openai/v1/chat/completions
+Default model parameters:
+max_tokens: 1000
+temperature: 0.7
+
+
+
+File Structure
+
+app.py: Main application file containing the Streamlit app and agent logic
+Sample data generation for demonstration purposes
+Visualization functions for data exploration
+
+Output
+
+Interactive visualizations of input data
+Step-by-step analysis results from each agent
+Downloadable JSON file containing all analysis results
+Persistent view of previous analysis results
+
+Notes
+
+Ensure you have a valid Groq API key before running the application
+The application requires an internet connection for API calls
+Large datasets may increase processing time
+Results are stored in session state and can be reviewed in the "Previous Analysis Results" section
+
+License
+This project is licensed under the MIT License.

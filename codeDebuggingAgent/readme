@@ -1,0 +1,195 @@
+# Automated Code Debugging Assistant
+
+A multi-agent system built with CrewAI that automatically analyzes and corrects errors in Python code using Groq's fast LLM inference.
+
+## 🚀 Features
+
+- **Multi-Agent System**: Three specialized agents working together
+  - 🔍 **Code Analyzer**: Identifies syntax and logical errors
+  - 🛠️ **Code Corrector**: Fixes errors and provides clean code
+  - 👔 **Manager**: Oversees the process and ensures quality
+
+- **Comprehensive Error Detection**:
+  - Syntax errors (missing colons, brackets, etc.)
+  - Logical errors (wrong operators, incorrect flow)
+  - Runtime errors (division by zero, key errors)
+  - Code improvement suggestions
+
+- **User-Friendly Interface**: Built with Streamlit for easy interaction
+- **Fast Processing**: Powered by Groq's lightning-fast LLM inference
+- **Example Codes**: Pre-loaded examples to test the system
+
+## 📋 Prerequisites
+
+- Python 3.8 or higher
+- Groq API key (free at [console.groq.com](https://console.groq.com/))
+
+## 🛠️ Installation
+
+1. **Clone/Download the code** and navigate to the directory
+
+2. **Install dependencies**:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Get your Groq API key**:
+   - Visit [console.groq.com](https://console.groq.com/)
+   - Sign up for a free account
+   - Get your API key from the dashboard
+
+4. **Run the application**:
+   ```bash
+   streamlit run app.py
+   ```
+
+## 🔧 Configuration
+
+### Option 1: Enter API Key in the App
+- Run the app and enter your Groq API key in the sidebar
+
+### Option 2: Environment Variable
+- Set your API key as an environment variable:
+  ```bash
+  export GROQ_API_KEY="your-api-key-here"
+  ```
+
+### Option 3: Streamlit Secrets (for deployment)
+- Create `.streamlit/secrets.toml`:
+  ```toml
+  GROQ_API_KEY = "your-api-key-here"
+  ```
+
+## 🎯 How to Use
+
+1. **Enter your Groq API key** in the sidebar
+2. **Paste your Python code** in the input area (or select an example)
+3. **Click "Start Debugging"** to begin the analysis
+4. **Review the results** from each agent
+5. **Download the corrected code** if needed
+
+## 🧪 Example Test Cases
+
+The app includes several example codes with common errors:
+
+### Fibonacci with Syntax Errors
+```python
+def fibonacci_iterative():
+    if n = 0:  # Should be ==
+        return []
+    # ... more errors
+```
+
+### List Processing with Logic Errors
+```python
+def process_list(numbers):
+    for i in range(len(numbers)):
+        if numbers[i] % 2 = 0:  # Should be ==
+            result.append(numbers[i] / 0)  # Division by zero
+```
+
+## 🏗️ Architecture
+
+### Agent Roles
+- **Code Analyzer**: Expert at identifying all types of Python errors
+- **Code Corrector**: Specializes in fixing code while maintaining functionality
+- **Manager**: Coordinates the process and provides quality assurance
+
+### Process Flow
+1. User submits code → Code Analyzer identifies errors
+2. Analyzer output → Code Corrector fixes the issues
+3. Both outputs → Manager provides final summary and validation
+
+### Technology Stack
+- **CrewAI**: Multi-agent orchestration framework
+- **Groq**: Fast LLM inference for agent reasoning
+- **Streamlit**: Web interface for user interaction
+- **Python**: Core programming language
+
+## 🔍 What Gets Detected
+
+### Syntax Errors
+- Missing colons, brackets, parentheses
+- Incorrect indentation
+- Invalid variable names
+- Wrong operators (= instead of ==)
+
+### Logical Errors
+- Incorrect conditional statements
+- Wrong loop logic
+- Function parameter issues
+- Variable scope problems
+
+### Runtime Errors
+- Division by zero
+- Key errors in dictionaries
+- Index out of range
+- Type mismatches
+
+### Best Practices
+- Code optimization suggestions
+- Pythonic improvements
+- Error handling recommendations
+
+## 🚀 Deployment
+
+### Local Development
+```bash
+streamlit run app.py
+```
+
+### Streamlit Cloud
+1. Push code to GitHub
+2. Connect your repo to Streamlit Cloud
+3. Add your Groq API key in secrets
+4. Deploy!
+
+### Docker (Optional)
+```dockerfile
+FROM python:3.9-slim
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+COPY . .
+EXPOSE 8501
+CMD ["streamlit", "run", "app.py"]
+```
+
+## 🤝 Contributing
+
+Feel free to contribute by:
+- Adding more example test cases
+- Improving error detection patterns
+- Enhancing the UI/UX
+- Adding support for other programming languages
+
+## 📄 License
+
+This project is open source and available under the MIT License.
+
+## 🆘 Troubleshooting
+
+### Common Issues
+
+**"Please set your GROQ_API_KEY"**
+- Make sure you've entered a valid Groq API key
+- Check that the key has sufficient credits
+
+**"Error calling Groq API"**
+- Verify your internet connection
+- Check if the Groq service is available
+- Ensure your API key is valid and active
+
+**Agents not responding correctly**
+- Try with simpler code examples first
+- Check if the input code is valid Python syntax
+- Restart the application if needed
+
+### Getting Help
+- Check the [Groq Documentation](https://console.groq.com/docs)
+- Review [CrewAI Documentation](https://docs.crewai.com/)
+- Open an issue if you find bugs
+
+---
+
+**🎉 Happy Debugging!** This tool will help you identify and fix Python code errors quickly using the power of AI agents.

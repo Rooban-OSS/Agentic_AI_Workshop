@@ -1,0 +1,222 @@
+Personalized Education Assistant
+A web-based application powered by Streamlit, Groq AI, and Serper API to deliver a tailored learning experience. This tool helps learners by generating personalized learning paths, curating relevant content, creating quizzes, and suggesting project ideas based on user expertise levels and interests.
+
+Table of Contents
+
+Overview
+Features
+Technologies Used
+Installation
+Configuration
+Usage
+Project Structure
+Contributing
+License
+Acknowledgments
+
+
+Overview
+The Personalized Education Assistant is designed to empower learners of all levels—beginner, intermediate, and advanced—by providing a structured and customized learning journey. It leverages the Groq API for generating intelligent content and the Serper API for real-time web search to curate up-to-date resources. The application is built using Streamlit, offering an intuitive and interactive user interface.
+Key functionalities include:
+
+Generating sequential learning paths for multiple topics.
+Curating learning materials tailored to user expertise.
+Creating progressive quizzes to test knowledge.
+Suggesting practical, industry-relevant project ideas.
+
+This tool is ideal for self-learners, educators, or anyone seeking a structured approach to mastering new skills.
+
+Features
+
+Sequential Learning Path:
+
+Generate a step-by-step learning plan for multiple topics.
+Tasks include clear titles, detailed descriptions, learning objectives, and estimated completion times.
+Tracks task completion status.
+
+
+Content Curation:
+
+Combines AI-generated recommendations with real-time web search results.
+Provides core concepts, learning progression paths, study approaches, key skills, and solutions to common challenges.
+Displays top web resources with titles, links, and snippets.
+
+
+Quiz Generator:
+
+Creates customizable quizzes with progressive difficulty.
+Includes multiple-choice questions, correct answers, and explanations.
+Supports 3 to 10 questions per quiz, tailored to the user’s expertise level.
+
+
+Project Ideas Generator:
+
+Suggests engaging, level-appropriate project ideas aligned with current industry trends.
+Includes project titles, descriptions, technologies/concepts, timelines, learning outcomes, and step-by-step outlines.
+Optionally incorporates user interests for personalization.
+
+
+User-Friendly Interface:
+
+Built with Streamlit for a responsive, tab-based layout.
+Features API key validation, model selection, and connection testing.
+Provides real-time feedback with spinners and success/error messages.
+
+
+
+
+Technologies Used
+
+Python 3.8+: Core programming language.
+Streamlit: Web application framework for the user interface.
+Groq API: AI-powered content generation (models: LLaMA3, Mixtral, Gemma).
+Serper API: Real-time Google search for learning resources.
+Requests: HTTP requests for API communication.
+Dataclasses & Enums: For structured data modeling.
+Typing: For type-hinted, maintainable code.
+
+
+Installation
+Follow these steps to set up the project locally:
+
+Clone the Repository:
+git clone https://github.com/your-username/personalized-education-assistant.git
+cd personalized-education-assistant
+
+
+Create a Virtual Environment:
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+
+Install Dependencies:
+pip install -r requirements.txt
+
+Sample requirements.txt:
+streamlit==1.38.0
+requests==2.32.3
+
+
+Set Up API Keys:
+
+Obtain a Groq API key from Groq Console.
+Obtain a Serper API key from Serper.dev.
+These will be entered via the application’s sidebar during runtime.
+
+
+Run the Application:
+streamlit run app.py
+
+The app will open in your default browser at http://localhost:8501.
+
+
+
+Configuration
+
+API Keys:
+
+Enter your Groq API Key and Serper API Key in the sidebar.
+Validate the connection using the “Test API Connection” button.
+
+
+Model Selection:
+
+Choose from available Groq models (e.g., llama3-8b-8192, llama3-70b-8192, mixtral-8x7b-32768, gemma-7b-it).
+Default: llama3-8b-8192.
+
+
+Error Handling:
+
+The app provides detailed error messages for API issues, network failures, or JSON parsing errors.
+Check API credits and key validity if errors persist.
+
+
+
+
+Usage
+
+Access the Application:
+
+Open the app in your browser.
+Configure API keys and select a model in the sidebar.
+
+
+Navigate Tabs:
+
+Learning Path: Enter topics (one per line) and select an expertise level to generate a learning plan.
+Content Curation: Input a topic and expertise level to get AI recommendations and web resources.
+Quiz Generator: Specify a topic, expertise level, and number of questions to create a quiz.
+Project Ideas: Provide a topic, expertise level, and optional interests to receive project suggestions.
+
+
+Interact with Results:
+
+Expand tasks, view curated content, read quiz questions, or explore project ideas.
+Mark learning tasks as complete for progress tracking.
+
+
+Troubleshooting:
+
+Ensure API keys are valid and have sufficient credits.
+Check internet connectivity for API requests.
+Refer to error messages for specific issues.
+
+
+
+
+Project Structure
+personalized-education-assistant/
+│
+├── app.py                 # Main Streamlit application
+├── requirements.txt       # Python dependencies
+├── README.md              # Project documentation
+└── venv/                  # Virtual environment (not tracked)
+
+Key components in app.py:
+
+Config: Stores API URLs.
+ExpertiseLevel: Enum for learner levels (Beginner, Intermediate, Advanced).
+LearningTask: Dataclass for task structure.
+GroqClient: Handles Groq API interactions.
+SerperClient: Manages Serper API searches.
+PersonalizedEducationAssistant: Core logic for learning paths, curation, quizzes, and projects.
+main(): Streamlit UI and tab-based navigation.
+
+
+Contributing
+Contributions are welcome! To contribute:
+
+Fork the Repository:
+
+Click “Fork” on GitHub to create your copy.
+
+
+Create a Branch:
+git checkout -b feature/your-feature-name
+
+
+Make Changes:
+
+Follow PEP 8 for Python code.
+Add tests if applicable.
+Update documentation as needed.
+
+
+Submit a Pull Request:
+
+Push changes to your fork.
+Open a PR with a clear description of your changes.
+
+
+
+Issues and feature requests can be submitted via the GitHub Issues page.
+
+License
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+Acknowledgments
+
+Groq: For providing a powerful AI API for content generation.
+Serper: For enabling real-time web search capabilities.
+Streamlit: For an easy-to-use framework to build interactive web apps.
+Python Community: For robust libraries and tools.

@@ -1,0 +1,173 @@
+Logistics Optimization Crew AI System
+Overview
+The Logistics Optimization Crew AI System is a Streamlit-based application designed to analyze logistics operations and provide actionable optimization strategies for delivery routes and inventory management. Tailored for the Indian market, it uses Indian Rupees (₹) for all monetary values and accounts for regional factors like monsoon seasons and festival periods. The system leverages AI agents powered by the Groq API to analyze user-uploaded data and generate insights.
+This repository contains two main scripts:
+
+logistics_optimization_crew.py: A Streamlit app that allows users to upload logistics data, visualize key performance metrics, and run AI-driven optimization analysis.
+generate_data_templates.py: A utility script to generate CSV templates for delivery and inventory data, along with detailed documentation to guide users in preparing their data.
+
+Features
+
+Data Upload: Upload delivery and inventory data in CSV format for analysis.
+Dashboard: Visualize key logistics metrics (e.g., average delivery time, on-time rate, fuel costs in ₹, total packages).
+AI Analysis: Two AI agents (Logistics Analyst and Optimization Strategist) analyze data and provide optimization recommendations.
+Indian Context: Supports Indian Rupees (₹) and considers regional factors like traffic, weather, and festival seasons.
+Data Templates: Generate pre-formatted CSV templates to ensure data compatibility with the Streamlit app.
+Export Options: Download analysis results as a JSON report (PDF generation is a placeholder feature).
+
+Prerequisites
+
+Python: Version 3.8 or higher
+Dependencies: Install required Python packages using:pip install streamlit pandas numpy plotly groq
+
+
+Groq API Key: Obtain a free API key from https://console.groq.com/keys to enable AI analysis.
+Spreadsheet Editor: Software like Microsoft Excel or Google Sheets to edit CSV templates.
+
+Installation
+
+Clone this repository:git clone <repository-url>
+cd <repository-directory>
+
+
+Install dependencies:pip install -r requirements.txt
+
+If a requirements.txt file is not provided, install the required packages listed above.
+Ensure you have a valid Groq API key.
+
+Usage
+Step 1: Generate Data Templates
+The generate_data_templates.py script creates CSV templates and documentation for preparing your logistics data.
+
+Run the script:
+python generate_data_templates.py
+
+
+This generates three files:
+
+delivery_data_template.csv: Template for delivery data.
+inventory_data_template.csv: Template for inventory data.
+DATA_TEMPLATE_GUIDE.md: Detailed documentation on required and optional fields.
+
+
+Open the CSV templates in a spreadsheet editor (e.g., Excel, Google Sheets).
+
+Replace the sample data with your actual logistics data, ensuring all required fields are included:
+
+Delivery Data:
+date: YYYY-MM-DD format (e.g., 2024-01-15)
+route_id: Unique route identifier (e.g., MUM_001)
+delivery_time_hours: Delivery time in hours (e.g., 4.5)
+distance_km: Distance in kilometers (e.g., 120)
+fuel_cost_inr: Fuel cost in Indian Rupees (e.g., 1200)
+packages_delivered: Number of packages (e.g., 25)
+on_time_delivery: Boolean (True/False or 1/0)
+
+
+Inventory Data:
+product_id: Unique product identifier (e.g., PROD_001)
+current_stock: Current stock level (e.g., 150)
+reorder_point: Minimum stock before reordering (e.g., 100)
+holding_cost_per_unit_inr: Holding cost per unit in ₹ (e.g., 12.50)
+demand_last_30_days: Demand in last 30 days (e.g., 85)
+supplier_lead_time_days: Supplier delivery time in days (e.g., 7)
+
+
+
+
+Save the files as CSV format.
+
+
+Step 2: Run the Streamlit App
+The logistics_optimization_crew.py script runs the Streamlit app for data analysis and optimization.
+
+Start the Streamlit app:streamlit run logistics_optimization_crew.py
+
+
+Open the app in your browser (typically at http://localhost:8501).
+In the sidebar:
+Enter your Groq API key.
+Upload the filled delivery_data_template.csv and inventory_data_template.csv files.
+
+
+If the uploaded files pass validation, the app will display a dashboard with key metrics.
+Click Start Analysis to run the AI-driven optimization process.
+View results in the tabs: Analysis Results, Optimization Strategy, and Implementation Plan.
+Download the JSON report or (optionally) generate a PDF report (placeholder feature).
+
+Data Requirements
+
+Delivery Data:
+Must include all required columns listed above.
+Optional fields (e.g., driver_id, vehicle_type, start_city) can enhance analysis but are not mandatory.
+
+
+Inventory Data:
+Must include all required columns listed above.
+Optional fields (e.g., product_name, supplier_city) improve analysis quality.
+
+
+Data Quality:
+Use YYYY-MM-DD for dates.
+Ensure numerical fields (e.g., fuel_cost_inr, distance_km) are positive and realistic.
+Use consistent naming for text fields (e.g., MUM_001 for route IDs).
+Use True/False or 1/0 for boolean fields.
+
+
+Sample Size:
+Minimum: 100 delivery records, 50 inventory items.
+Recommended: 500+ delivery records, 100+ inventory items for robust analysis.
+
+
+
+Indian Market Considerations
+
+Currency: All costs (e.g., fuel_cost_inr, holding_cost_per_unit_inr) are in Indian Rupees (₹).
+Regional Factors:
+Monsoon seasons (June-September) may affect delivery times.
+Festival periods (e.g., Diwali, Durga Puja) can cause traffic and demand spikes.
+Regional variations (e.g., North India traffic, South India port access) are considered in the templates.
+
+
+Cost Factors:
+Fuel prices vary by state (~₹100-110/liter).
+Toll charges and labor costs differ across regions.
+
+
+
+Files in the Repository
+
+logistics_optimization_crew.py: Main Streamlit app for logistics analysis and optimization.
+generate_data_templates.py: Script to generate data templates and documentation.
+delivery_data_template.csv: Generated template for delivery data (after running generate_data_templates.py).
+inventory_data_template.csv: Generated template for inventory data.
+DATA_TEMPLATE_GUIDE.md: Documentation for data templates, including field descriptions and guidelines.
+
+Limitations
+
+AI Data Integration: The current AI tasks do not directly process uploaded data. To enhance analysis, modify the execute_task method in logistics_optimization_crew.py to include data summaries in the Groq API prompts.
+PDF Generation: The "Generate PDF Report" feature is a placeholder and requires implementation (e.g., using reportlab or weasyprint).
+Data Validation: The app checks for required columns but does not validate data types or ranges. Add further validation if needed (e.g., ensuring delivery_time_hours is numeric).
+
+Future Enhancements
+
+Integrate uploaded data into AI prompts for more relevant analysis.
+Implement PDF report generation.
+Add advanced data validation (e.g., type checking, range validation).
+Support for scheduling periodic analyses.
+Include predictive modeling for demand forecasting.
+
+Troubleshooting
+
+Validation Errors: If you see errors like "Delivery data must contain columns...", ensure your CSV files include all required columns exactly as specified (e.g., fuel_cost_inr instead of fuel_cost).
+API Errors: Verify your Groq API key is valid and you have sufficient quota. Visit https://console.groq.com/keys for details.
+CSV Issues: Ensure CSV files are properly formatted (e.g., no missing headers, no special characters in numerical fields).
+
+Contributing
+Contributions are welcome! Please submit a pull request or open an issue for bug reports, feature requests, or improvements.
+License
+This project is licensed under the MIT License.
+Contact
+For questions or support, contact the repository maintainer or open an issue on GitHub.
+
+Generated on July 26, 2025, at 07:10 AM IST

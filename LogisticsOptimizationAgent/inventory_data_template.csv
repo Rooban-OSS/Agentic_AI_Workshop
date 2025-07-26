@@ -1,0 +1,11 @@
+product_id,current_stock,reorder_point,holding_cost_per_unit_inr,demand_last_30_days,supplier_lead_time_days,product_name,product_category,supplier_name,supplier_city,warehouse_location,unit_purchase_cost_inr,unit_selling_price_inr,storage_temperature_req,shelf_life_days,seasonal_demand_factor,abc_classification,supplier_rating,minimum_order_quantity
+PROD_001,150,100,12.5,85,7,Electronics_Component_A,Electronics,Mumbai_Electronics_Ltd,Mumbai,Mumbai_WH_01,450.0,675.0,Room_Temp,365,1.0,A,4.2,50
+PROD_002,45,50,25.75,62,14,Textile_Material_B,Textiles,Gujarat_Textiles_Pvt,Ahmedabad,Delhi_WH_02,125.5,188.25,Room_Temp,730,1.2,B,3.8,100
+PROD_003,280,200,8.25,120,5,Home_Appliance_C,Home_Appliances,Karnataka_Appliances_Corp,Bangalore,Bangalore_WH_03,2800.75,4201.13,Room_Temp,1095,0.8,A,4.5,25
+PROD_004,75,80,45.0,45,21,Automotive_Part_D,Automotive,Tamil_Nadu_Auto_Parts,Chennai,Chennai_WH_01,1250.25,1875.38,Room_Temp,1825,1.1,C,3.5,200
+PROD_005,320,250,15.6,180,10,Food_Product_E,Food_FMCG,Delhi_Foods_Ltd,Delhi,Delhi_WH_01,85.6,128.4,Cold_Storage,90,1.5,A,4.0,500
+PROD_006,90,100,35.25,55,18,Pharmaceutical_F,Pharmaceuticals,Hyderabad_Pharma_Inc,Hyderabad,Hyderabad_WH_01,750.8,1126.2,Climate_Controlled,180,1.0,B,4.3,100
+PROD_007,180,150,18.8,95,12,Cosmetic_Item_G,Beauty_Personal_Care,Pune_Cosmetics_Co,Pune,Pune_WH_01,320.45,480.68,Room_Temp,540,1.3,B,3.9,150
+PROD_008,60,70,55.4,40,25,Industrial_Tool_H,Industrial,Rajasthan_Tools_Ltd,Jaipur,Mumbai_WH_02,1850.9,2776.35,Room_Temp,1460,0.9,C,3.6,50
+PROD_009,240,180,22.3,110,8,Sports_Equipment_I,Sports_Recreation,Kerala_Sports_Mfg,Kochi,Kochi_WH_01,560.3,840.45,Room_Temp,1095,1.4,A,4.1,75
+PROD_010,110,120,28.9,70,15,Book_J,Books_Stationery,Bengal_Books_House,Kolkata,Kolkata_WH_01,245.7,368.55,Room_Temp,3650,1.1,B,4.4,300

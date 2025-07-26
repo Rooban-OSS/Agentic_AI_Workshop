@@ -1,0 +1,11 @@
+date,route_id,delivery_time_hours,distance_km,fuel_cost_inr,packages_delivered,on_time_delivery,driver_id,vehicle_type,start_city,end_city,weather_condition,traffic_condition,fuel_price_per_liter,toll_charges_inr,driver_overtime_hours,maintenance_cost_inr,delivery_priority
+2024-01-15,MUM_001,4.5,120,1200,25,True,DRV001,Truck_Large,Mumbai,Pune,Clear,Normal,105.5,150,0.0,200,Standard
+2024-01-16,DEL_002,6.2,180,1800,18,False,DRV002,Van_Medium,Delhi,Gurgaon,Rain,Heavy,108.2,280,2.2,450,Express
+2024-01-17,BLR_003,3.8,95,950,32,True,DRV003,Truck_Small,Bangalore,Mysore,Clear,Light,104.8,80,0.0,150,Standard
+2024-01-18,MUM_001,5.1,135,1350,28,True,DRV001,Truck_Large,Mumbai,Nashik,Fog,Normal,105.5,120,1.1,250,Standard
+2024-01-19,CHE_004,7.3,220,2200,15,False,DRV004,Truck_Medium,Chennai,Pondicherry,Heavy_Rain,Heavy,107.9,350,3.3,600,Express
+2024-01-20,HYD_005,4.9,145,1450,30,True,DRV005,Van_Large,Hyderabad,Warangal,Clear,Normal,106.3,200,0.9,300,Standard
+2024-01-22,DEL_002,5.8,165,1650,22,True,DRV002,Van_Medium,Delhi,Noida,Smog,Heavy,108.2,250,1.8,400,Standard
+2024-01-23,KOL_006,6.5,198,1980,19,False,DRV006,Truck_Large,Kolkata,Durgapur,Rain,Normal,103.6,320,2.5,500,Express
+2024-01-24,PUN_007,4.2,110,1100,35,True,DRV007,Van_Small,Pune,Satara,Clear,Light,105.2,100,0.0,180,Standard
+2024-01-25,MUM_001,3.9,88,880,40,True,DRV001,Truck_Small,Mumbai,Thane,Clear,Light,105.5,60,0.0,120,Standard
